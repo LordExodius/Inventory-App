@@ -1,5 +1,9 @@
 # Shopify-Backend-Intern-Challenge-2022
 
+## Functionality
+- Create, edit, delete, and view inventory items
+- Export to CSV
+
 ## Prerequisites: 
 - Python 3.9.x
 - Windows 10
