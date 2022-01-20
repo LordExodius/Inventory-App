@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td
+{
+    text-align: left;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+#left
+{
+    width: auto;
+    float: left;
+}
+#newItem
+{
+    width: 20%;
+    margin: auto;
+}
+</style>
+
+<head>
+    <title>Inventory App</title>
+</head>
+<body>
+    <header></header>
+    <form action="/inventoryapp/exportCSV/"><input type="submit" value="Export CSV"></form><br>
+    <div id="left">
+        <table>
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Item Description</th>
+                <th>Quantity</th>
+            </tr>
+            {% for item in itemList %}
+            <tr>
+                <td><a href="/inventoryapp/{{item.id}}/">{{item.id}}</a></td>
+                <td>{{item.itemName}}</td>
+                <td>{{item.itemDesc}}</td>
+                <td>{{item.numItems}}</td>
+                <td><form action="/inventoryapp/{{item.id}}/"><input type="submit" value="edit"></form></td>
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value={{item.id}}>
+                        <input type="submit" name="delete" value="delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id="newItem">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Create New Item</legend>
+                <label for="itemName">Item Name</label><br>
+                <input type="text" name="itemName"><br>
+                <label for="itemDesc">Item Desc</label><br>
+                <input type="text" name="itemDesc"><br>
+                <label for="numItems">Quantity</label><br>
+                <input type="number" name="numItems" min="0"><br>
+                <input type="submit" name="createItem" value="Create New Item">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

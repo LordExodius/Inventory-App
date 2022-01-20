@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td
+{
+    text-align: left;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+#left
+{
+    width: auto;
+    float: left;
+}
+#newItem
+{
+    width: 20%;
+    margin: auto;
+}
+</style>
+
+<head>
+    <title>Inventory App</title>
+</head>
+<body>
+<h1>Edit Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <label>{{field.label}}</label><br>
+            {{field}}<br>
+        {% endfor %}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
