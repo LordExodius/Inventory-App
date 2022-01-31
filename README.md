@@ -11,10 +11,10 @@
     
 ## Instructions
 1. Download this project.
-2. Open terminal application of choice (CMD or PowerShell), and navigate to the root directory of the project: `[where did you put it]/Shopify-Backend-Intern-Challenge-2022/`
+2. Open terminal application of choice (CMD or PowerShell), and navigate to the root directory of the project: `[where did you put it]/Inventory-App/`
 3. Run `python -m pip install -r requirements.txt` to download necessary packages. 
     - Linux: `pip install -r requirements.txt`.
-4. Navigate to `/Shopify-Backend-Intern-Challenge-2022/inventory-project/`
+4. Navigate to `/Inventory-App/inventory-project/`
 5. Start the local server by running `python -m manage runserver`
     - Linux: `python manage.py runserver`
 6. The web application will then be accessible at `http://localhost:8000/inventoryapp/`.
