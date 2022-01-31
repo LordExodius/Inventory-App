@@ -1,4 +1,4 @@
-# Shopify-Backend-Intern-Challenge-2022
+# Inventory-App
 
 ## Functionality
 - Create, edit, delete, and view inventory items
